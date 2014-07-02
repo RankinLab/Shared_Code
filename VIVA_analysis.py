@@ -14,21 +14,13 @@ for r,d,f in os.walk("."):
                 for stuff in lines:
                     item = stuff.split(' ')
                     y.append(item[18])
-                    #y.append(item[9])
-                test = y
-                #print(test)    
-                #tester = y.index(test[1])
-                #print(tester)
+                reversal = y
                 y = []
-
-
-#make a dictionary of the .trv files so I have an index and value. When I'm appending the final file, append the values
 
 for r,d,f in os.walk("."):
     for files in f:        
         if re.match(regex, files) is not None:            
             if files.endswith('.dat'):
-                #print(files)
                 o = open(os.path.join(r,files))
                 lines2 = o.readlines()[5:] #gets rid of header notes
                 k = 0                 
@@ -36,19 +28,11 @@ for r,d,f in os.walk("."):
                     vals = line.split(' ')
                     count = len(vals)                    
                     for i in range(0,count):
-                        #print(vals[i])
                         x.append(vals[i])
-                    test2 = x                    
-                    #print(test2)                               
-                #    if vals[i] != float(599.983):
-                #put if statement here (if filename is hte same and column X has a 1.. append some premade dictionary or array)
-                #    for k in range(0,len(test)):
-                    #tester = 
-                    compare = (test2[6]).strip()
-                    #print(compare) 
+                    spontaneous = x
+                    compare = (spontaneous[6]).strip()
                     if compare == str(1):
-                        print("hello")
-                        x.append(test[k])
+                        x.append(reversal[k])
                         csv_out.writerows([x])                                             
                         k = k + 1                       
                     else:
